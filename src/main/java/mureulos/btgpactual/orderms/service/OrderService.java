@@ -58,6 +58,7 @@ public class OrderService {
         return orders.map(OrderResponse::fromEntity);
     }
 
+
     public BigDecimal findTotalOnOrderByCustomerId(Long customerId) {
         var aggregation = newAggregation(
             match(Criteria.where("customerId").is(customerId)),
